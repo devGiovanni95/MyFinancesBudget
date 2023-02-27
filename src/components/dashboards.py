@@ -21,7 +21,9 @@ card_icon ={
 # =========  Layout  =========== #
 layout = dbc.Col([
        dbc.Row([
-    
+
+#=============================Cards de detalhes gerais======================================
+# Linha 1
             #Card Saldo Total
             dbc.Col([
                 dbc.CardGroup([
@@ -71,7 +73,50 @@ layout = dbc.Col([
                     )
                 ])
             ],width=4)
+    ], style={'margin':'10px'}),
 
+
+#=======================================Filtros=======================================================
+#linha 2
+    dbc.Row([
+        dbc.Col([
+            dbc.Card([
+                html.Legend("Filtrar Lançamentos",className="card-title"),
+                html.Label("Categorias das Receitas"),
+                html.Div(
+                    dcc.Dropdown(
+                        id="dropdown-receita",
+                        clearable=False,
+                        style={"width":"100%"},
+                        persistence=True,
+                        persistence_type="session",
+                        multi=True
+                    )
+                ),
+
+                html.Label("Categorias das Despesas", style={"margin-top":"10px"}),
+                    dcc.Dropdown(
+                        id="dropdown-despesa",
+                        clearable=False,
+                        style={"width":"100%"},
+                        persistence=True,
+                        persistence_type="session",
+                        multi=True
+                    ),
+
+
+                html.Legend("Periodo de Análise", style={"margin-top": "10px"}),
+                    #Range pega um periodo
+                    dcc.DatePickerRange(
+                        month_format='Do MMM, YY',
+                        end_date_placeholder_text='Data...',
+                        start_date=datetime(2023, 2, 27).date(),
+                        end_date=datetime.today() + timedelta(days=31),
+                        updatemode='singledate',
+                        id='date-picker-config',
+                        style={'z-index':'100'}),
+            ],style={'height':'100%', 'padding':'20px'})
+        ], width=4)#tamanho do card de filtros
 
     ])
 ])

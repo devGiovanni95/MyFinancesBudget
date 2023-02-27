@@ -77,7 +77,7 @@ layout = dbc.Col([
 
 
 #=======================================Filtros=======================================================
-#linha 2
+#linha 2 coluna 1
     dbc.Row([
         dbc.Col([
             dbc.Card([
@@ -116,9 +116,24 @@ layout = dbc.Col([
                         id='date-picker-config',
                         style={'z-index':'100'}),
             ],style={'height':'100%', 'padding':'20px'})
-        ], width=4)#tamanho do card de filtros
+        ], width=4),#tamanho do card de filtros
 
-    ])
+#linha 2 coluna 2
+        dbc.Col(
+            dbc.Card(dcc.Graph(id='graph1'),style= {'height':'100%', 'padding': '10px'}),width=8
+        )
+    ],style={'margin':'10px'}),#Fim da linha 2
+
+#linha 3
+
+        dbc.Row([
+            dbc.Col(dbc.Card(dcc.Graph(id='graph2'), style={'padding':'10px'}), width=6),
+            dbc.Col(dbc.Card(dcc.Graph(id='graph3'), style={'padding':'10px'}), width=3),
+            dbc.Col(dbc.Card(dcc.Graph(id='graph4'), style={'padding':'10px'}), width=3),
+        ])
+
+
+
 ])
 
 

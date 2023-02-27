@@ -147,7 +147,7 @@ layout = dbc.Col([
                             dbc.Col([
                                 dbc.Label('Descrição: '),
                                 dbc.Input(
-                                    placeholder="Ex: Dividendos da bolsa, herança, ...", id="txt-despesa"),
+                                    placeholder="Ex: Gasolina, Compras...", id="txt-despesa"),
                             ], width=6),
                             dbc.Col([
                                 dbc.Label('Valor: '),

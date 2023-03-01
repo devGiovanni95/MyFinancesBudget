@@ -81,7 +81,7 @@ layout = dbc.Col([
                                 dbc.Select(id='select_receita',
                                            options=[], value=[])
                             ], width=4)
-                        ], style={'margin-top': '25px'}),
+                        ], style={'margin-top': '20px'}),
 
                         dbc.Row([
                             dbc.Accordion([
@@ -128,7 +128,7 @@ layout = dbc.Col([
                                     dbc.Popover(dbc.PopoverBody(
                                         "Receita Salva"), target="salvar_receita", placement="left", trigger="click"),
                                 ])
-                            ], style={'margin-top': '25px'})
+                            ], style={"margin-top": "25%"})
 
                         ])    
                     ], style={"backgroun-color": "rgba(17, 140, 79, 0.05)"},

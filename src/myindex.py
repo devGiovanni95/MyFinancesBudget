@@ -8,10 +8,20 @@ import plotly.express as px
 from app import *
 from components import sidebar, dashboards, extratos
 
+from globals import *
+
 # =========  Layout  =========== #
 content = html.Div(id="page-content")
 
 app.layout = dbc.Container(children=[
+
+    #Configurando para salvar projeto na memoria de cada usuario
+    #utilizando as variaveis locai e nao as globais
+    dcc.Store(id='store-receitas',data=df_receitas.to_dict()),
+    dcc.Store(id='store-despesas',data=df_despesas.to_dict()),
+    dcc.Store(id='store-cat-despesas',data=df_cat_despesa.to_dict()),
+    dcc.Store(id='store-cat-receitas',data=df_cat_receita.to_dict()),
+
     # Criando uma linha e duas colunas
     dbc.Row([
         dbc.Col([
